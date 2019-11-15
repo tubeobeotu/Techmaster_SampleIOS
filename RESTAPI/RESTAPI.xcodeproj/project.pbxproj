@@ -15,6 +15,7 @@
 		B16614BF237D2BB2003FCAE7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B16614BD237D2BB2003FCAE7 /* LaunchScreen.storyboard */; };
 		B1805F52237E4B0900C27EDF /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1805F51237E4B0900C27EDF /* Router.swift */; };
 		B1805F54237E4CE700C27EDF /* EmployeeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1805F53237E4CE700C27EDF /* EmployeeRouter.swift */; };
+		B1805F57237E5D0400C27EDF /* EmployeeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1805F56237E5D0400C27EDF /* EmployeeModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +30,7 @@
 		B16614C0237D2BB2003FCAE7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B1805F51237E4B0900C27EDF /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		B1805F53237E4CE700C27EDF /* EmployeeRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeRouter.swift; sourceTree = "<group>"; };
+		B1805F56237E5D0400C27EDF /* EmployeeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeModel.swift; sourceTree = "<group>"; };
 		C4C3B81CCF5E2C762A60830E /* Pods-RESTAPI.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RESTAPI.release.xcconfig"; path = "Target Support Files/Pods-RESTAPI/Pods-RESTAPI.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -82,6 +84,7 @@
 		B16614B1237D2BB0003FCAE7 /* RESTAPI */ = {
 			isa = PBXGroup;
 			children = (
+				B1805F56237E5D0400C27EDF /* EmployeeModel.swift */,
 				B1805F51237E4B0900C27EDF /* Router.swift */,
 				B1805F53237E4CE700C27EDF /* EmployeeRouter.swift */,
 				B16614B2237D2BB0003FCAE7 /* AppDelegate.swift */,
@@ -212,6 +215,7 @@
 				B1805F54237E4CE700C27EDF /* EmployeeRouter.swift in Sources */,
 				B16614B7237D2BB0003FCAE7 /* ViewController.swift in Sources */,
 				B1805F52237E4B0900C27EDF /* Router.swift in Sources */,
+				B1805F57237E5D0400C27EDF /* EmployeeModel.swift in Sources */,
 				B16614B3237D2BB0003FCAE7 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

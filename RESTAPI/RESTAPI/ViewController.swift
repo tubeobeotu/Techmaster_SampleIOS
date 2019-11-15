@@ -7,13 +7,28 @@
 //
 
 import UIKit
+import SwiftyJSON
 
 class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        getEmployee()
+        addEmployee()
+        
+//        let employeeRouter =  EmployeeRouter()
+//        employeeRouter.endPoint = .getEmployees
+//        employeeRouter.run { (json, error) in
+//            if let json = json {
+//                let employees = EmployeeModel.initModels(json: json)
+//                print("")
+//            } else {
+//                if let error = error {
+//                    print(error)
+//                }
+//            }
+//
+//        }
     }
     
     func getEmployee() {

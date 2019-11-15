@@ -7,6 +7,8 @@
 //
 
 import Foundation
+import Alamofire
+import SwiftyJSON
 enum ServerConfig {
     case Product
     case Staging
@@ -42,6 +44,7 @@ class BaseRouter: NSObject {
     var params: [String: Any]? {
         return nil
     }
+    
     func run(completion: @escaping (_ json: Any?, _ error: String?) -> Void) {
         let url = String(format: serverConfig.urlString + path)
         guard let serviceUrl = URL(string: url) else { return }
@@ -73,5 +76,42 @@ class BaseRouter: NSObject {
                 }
             }
         }.resume()
+    }
+    
+    func runAlamofire(completion: @escaping (_ json: Any?, _ error: String?) -> Void) {
+        let url = String(format: serverConfig.urlString + path)
+        guard let serviceUrl = URL(string: url) else { return }
+        var request = URLRequest(url: serviceUrl)
+        request.httpMethod = method.rawValue
+        if method == .put || method == .post {
+            request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+            request.addValue("application/json", forHTTPHeaderField: "Accept")
+        }
+        if let parameterDictionary = params {
+            var rawText = ""
+            if let theJSONData = try? JSONSerialization.data(
+                withJSONObject: parameterDictionary,
+                options: []) {
+                let theJSONText = String(data: theJSONData,
+                                         encoding: .utf8)
+                rawText = theJSONText ?? ""
+                print("JSON string = \(theJSONText!)")
+            }
+            if let textData = rawText.data(using: .utf8, allowLossyConversion: false) {
+                request.httpBody = textData
+            }
+        }
+
+        SessionManager.default.request(request).responseJSON(completionHandler: { data in
+            
+            switch data.result {
+            case .success(let data):
+                completion(data, nil)
+                break
+            case .failure(let error):
+                completion(nil, error.localizedDescription)
+                break
+            }
+        })
     }
 }

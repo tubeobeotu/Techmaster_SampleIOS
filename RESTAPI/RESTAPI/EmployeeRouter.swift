@@ -24,4 +24,7 @@ class EmployeeRouter: BaseRouter {
             return ""
         }
     }
+    override func run(completion: @escaping (Any?, String?) -> Void) {
+        self.runAlamofire(completion: completion)
+    }
 }
