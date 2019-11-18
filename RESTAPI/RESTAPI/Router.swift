@@ -9,6 +9,7 @@
 import Foundation
 import Alamofire
 import SwiftyJSON
+
 enum ServerConfig {
     case Product
     case Staging
@@ -20,7 +21,17 @@ enum ServerConfig {
             case .Product:
                 return "http://dummy.restapiexample.com/api/"
             default:
-                return ""
+                return "aaaabbb"
+            }
+        }
+    }
+    var port:String {
+        get {
+            switch self {
+            case .Product:
+                return "8080"
+            default:
+                return "10L:22"
             }
         }
     }
@@ -38,15 +49,17 @@ class BaseRouter: NSObject {
     var method: APIHTTPMethod {
         return .get
     }
-    var path: String {
+    var endpointString: String {
         fatalError("[\(#function))] Must be overridden in subclass")
     }
     var params: [String: Any]? {
         return nil
     }
+ 
     
     func run(completion: @escaping (_ json: Any?, _ error: String?) -> Void) {
-        let url = String(format: serverConfig.urlString + path)
+
+        let url = String(format: serverConfig.urlString + endpointString)
         guard let serviceUrl = URL(string: url) else { return }
         var request = URLRequest(url: serviceUrl)
         request.httpMethod = method.rawValue
@@ -79,7 +92,7 @@ class BaseRouter: NSObject {
     }
     
     func runAlamofire(completion: @escaping (_ json: Any?, _ error: String?) -> Void) {
-        let url = String(format: serverConfig.urlString + path)
+        let url = String(format: serverConfig.urlString + endpointString)
         guard let serviceUrl = URL(string: url) else { return }
         var request = URLRequest(url: serviceUrl)
         request.httpMethod = method.rawValue

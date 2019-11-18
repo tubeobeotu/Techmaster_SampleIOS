@@ -8,13 +8,13 @@
 
 import Foundation
 enum EmployeeRouterEndPoint {
-    case getEmployees
-    case getEmployeeDetail(id: String)
+    case getEmployees //
+    case getEmployeeDetail(id: String) //
     case get
 }
 class EmployeeRouter: BaseRouter {
     var endPoint: EmployeeRouterEndPoint!
-    override var path: String {
+    override var endpointString: String {
         switch endPoint {
         case .getEmployees:
             return "v1/employees"
@@ -24,7 +24,7 @@ class EmployeeRouter: BaseRouter {
             return ""
         }
     }
-    override func run(completion: @escaping (Any?, String?) -> Void) {
-        self.runAlamofire(completion: completion)
-    }
+//    override func run(completion: @escaping (Any?, String?) -> Void) {
+//        self.runAlamofire(completion: completion)
+//    }
 }

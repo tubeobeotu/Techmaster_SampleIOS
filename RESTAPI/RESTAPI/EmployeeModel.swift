@@ -14,6 +14,7 @@ class EmployeeModel: NSObject {
     
     init(json: Any) {
         if let json = json as? Dictionary<String, Any> {
+            //swifty json
             self.name = (json["employee_name"] as? String) ?? ""
         }
     }
