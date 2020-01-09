@@ -15,6 +15,10 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.img_Avatar.layer.cornerRadius = 21
+        let cstLeft = self.view.constraints.filter { $0.identifier == "cstLeft" }.first
+        
+        cstLeft?.constant = 30
+
         // Do any additional setup after loading the view.
     }
 
