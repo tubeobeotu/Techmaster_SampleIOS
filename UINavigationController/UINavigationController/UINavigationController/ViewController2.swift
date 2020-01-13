@@ -19,7 +19,7 @@ class ViewController2: UIViewController {
 
     @IBAction func push(_ sender: Any) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let vc = storyboard.instantiateViewController(withIdentifier: "ViewController3") as! ViewController3
+        let vc = storyboard.instantiateViewController(withIdentifier: "ViewController3")
         self.navigationController?.pushViewController(vc, animated: true)
     }
     

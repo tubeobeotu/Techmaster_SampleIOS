@@ -21,7 +21,7 @@
                                 <state key="normal" title="Push"/>
                                 <connections>
                                     <action selector="push:" destination="BYZ-38-t0r" eventType="touchUpInside" id="nSD-J9-itp"/>
-                                    <segue destination="5pO-8k-OaA" kind="push" id="Khi-bl-PRx"/>
+                                    <segue destination="5pO-8k-OaA" kind="push" id="GpC-ov-EPN"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -32,7 +32,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1042.0289855072465" y="99.776785714285708"/>
+            <point key="canvasLocation" x="1304" y="33"/>
         </scene>
         <!--View Controller2-->
         <scene sceneID="XRi-m1-Scd">
