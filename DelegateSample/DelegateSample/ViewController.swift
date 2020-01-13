@@ -8,6 +8,7 @@
 
 import UIKit
 
+
 class ViewController: UIViewController {
     @IBOutlet weak var v_Player: TPlayerView!
     
@@ -19,7 +20,9 @@ class ViewController: UIViewController {
 
 extension ViewController: TPlayerViewDelegate {
     func playAudioFromPlayerView() {
-        print("play")
+        print("")
     }
+    
+    
 }
 
