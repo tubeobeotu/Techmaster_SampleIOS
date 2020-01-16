@@ -211,7 +211,7 @@ Nhớ mang 2 dây chằng đi để buộc</string>
             <connections>
                 <outlet property="lbl_Content" destination="hKX-Rz-cha" id="7c9-ha-O8C"/>
             </connections>
-            <point key="canvasLocation" x="204.34782608695653" y="154.6875"/>
+            <point key="canvasLocation" x="35" y="135"/>
         </tableViewCell>
     </objects>
     <resources>
