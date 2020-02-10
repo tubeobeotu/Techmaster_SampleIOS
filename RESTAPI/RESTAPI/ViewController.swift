@@ -86,7 +86,19 @@ class ViewController: UIViewController {
         let session = URLSession.shared
         session.dataTask(with: request) { (data, response, error) in
             print(data?.toString())
-            //update UI => callback
+            //update UI => callback+
+            //            if let response = response {
+            //                print(response)
+            //            }
+            //            if let data = data {
+            //                do {
+            //                    let json = try JSONSerialization.jsonObject(with: data, options: [])
+            //                    print(json)
+            //                } catch {
+            //                    print(error)
+            //                }
+            //            }
+
         }.resume()
     }
     
