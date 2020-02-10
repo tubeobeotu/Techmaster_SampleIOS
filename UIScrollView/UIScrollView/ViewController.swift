@@ -10,21 +10,21 @@ import UIKit
 
 class ViewController: UIViewController {
     @IBOutlet weak var svl_Main: UIScrollView!
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         svl_Main.delegate = self
     }
     
     @IBAction func scrollTo(_ sender: Any) {
-        svl_Main.contentInset = UIEdgeInsets.init(top: 100, left: 100, bottom: 300, right: 100)
+        svl_Main.contentInset = UIEdgeInsets.init(top: 300, left: 0, bottom: 0, right: 0)
     }
 }
 
 extension ViewController: UIScrollViewDelegate {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        
+        print(scrollView.contentOffset.y)
     }
+    
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
         
     }

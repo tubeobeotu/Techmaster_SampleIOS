@@ -18,19 +18,21 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view.
 //        getEmployeeInfo()
         
-                let employeeRouter =  EmployeeRouter()
-                employeeRouter.endPoint = .getEmployees
-                employeeRouter.run { (json, error) in
-                    if let json = json {
-                        let employees = EmployeeModel.initModels(json: json)
-                        print("")
-                    } else {
-                        if let error = error {
-                            print(error)
-                        }
-                    }
+//                let employeeRouter =  EmployeeRouter()
+//                employeeRouter.endPoint = .getEmployees
+//                employeeRouter.run { (json, error) in
+//                    if let json = json {
+//                        let employees = EmployeeModel.initModels(json: json)
+//                        print("")
+//                    } else {
+//                        if let error = error {
+//                            print(error)
+//                        }
+//                    }
+//
+//                }
         
-                }
+        getEmployees()
     }
     
     @IBAction func onTouch(_ sender: Any) {
@@ -77,13 +79,13 @@ class ViewController: UIViewController {
     }
     
     func getEmployees() {
-        let url = String(format: "")
+        let url = String(format: "http://dummy.restapiexample.com/api/v1/employees")
         guard let serviceUrl = URL(string: url) else { return }
         let request = URLRequest(url: serviceUrl)
         let session = URLSession.shared
         
         session.dataTask(with: request) { (data, response, error) in
-            print(data)
+            print(data?.toString())
             //update UI => callback
             //            if let response = response {
             //                print(response)
